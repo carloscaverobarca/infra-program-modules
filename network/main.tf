@@ -12,6 +12,7 @@ resource "aws_subnet" "subnets" {
   vpc_id                  = aws_vpc.vpc_ccb.id
   cidr_block              = each.value.cidr_block
   availability_zone       = each.value.availability_zone
+  map_public_ip_on_launch = each.value.map_public_ip
 
   tags = {
     name = each.value.name
